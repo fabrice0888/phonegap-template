@@ -16,6 +16,13 @@
         <script type="text/javascript">
 
 
+
+        $( document ).bind( "mobileinit", function() {
+          // Make your jQuery Mobile framework configuration changes here!
+
+          $.mobile.allowCrossDomainPages = true;
+        });
+
         $(document).ready(function() {
           
 
@@ -23,7 +30,8 @@
             $('.terug').on('click',function (){
  
                $.ajax({
-            //  async: false,
+               async: false,
+               cache : false,
             //  processData: false,
                data: JSON.stringify({tableName:"FA_SUB_CLASS"}),              
                type:'POST',
